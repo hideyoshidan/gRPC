@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  # client side
+  # grpc-php:
+  #   build: ./infra/grpc-php
+  #   ports:
+  #     - 9000:80
+  #   volumes:
+  #     - ./php-src:/grpc
+
+  # server side
+  grpc-golang:
+    container_name: grpc-golang
+    build: ./infra/grpc-golang
+    tty: true
+    ports:
+      - 1323:1323
+    volumes:
+      - ./go-src:/grpc
