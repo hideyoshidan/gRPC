@@ -5,12 +5,11 @@ test for gRPC
 - Checking that go environment is active
 ```
 <!-- local -->
-$ docker compose up -d
-$ docker compose ps
-$ docker compose exec grpc-golang bash
+$ make build
+$ make up
 
 <!-- in grpc-golang container -->
-# go run main.go
+$ make go-run
 ```
 
 - Checking thath php environment is active

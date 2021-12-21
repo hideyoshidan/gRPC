@@ -9,6 +9,8 @@ RUN apt-get update \
     && apt-get install -y vim zip \
     && apt install -y protobuf-compiler
 
+RUN export PATH="$PATH:$(go env GOPATH)/bin"
+
 # setting working dir "/grpc"
 WORKDIR /grpc
 EXPOSE 1323

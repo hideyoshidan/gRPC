@@ -1,0 +1,20 @@
+syntax = "proto3";
+option go_package = "./";
+
+package sample;
+
+// interface
+service Sample {
+    // rpc function arg is for request, return is response
+    rpc Sample (SampleRequest) returns (SampleResponse) {}
+}
+
+// Request body
+message SampleRequest {
+    string requestParam = 1;
+}
+
+// Response body
+message SampleResponse {
+    string responseMsg = 1;
+}
