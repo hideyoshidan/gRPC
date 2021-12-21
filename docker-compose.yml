@@ -4,7 +4,6 @@ services:
   grpc-webserver:
     container_name: grpc-webserver
     image: nginx:latest
-    restart: always
     tty: true
     ports: 
       - 8000:8000
@@ -23,6 +22,7 @@ services:
       - 9000:9000
     volumes:
       - ./infra/grpc-php/php.ini:/etc/php.ini
+      - ./php-src:/grpc
 
   # server side
   grpc-golang:

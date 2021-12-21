@@ -8,11 +8,15 @@ CONTAINER_NGINX=grpc-webserver
 ######################################### 
 # build docker containers
 build:
-	docker compsoe -f ./docker-compose.yml build --no-cache
+	docker compose -f ./docker-compose.yml build --no-cache
 
 # make docker containers
 up:
 	docker compose -f ./docker-compose.yml up -d
+
+# show docker containers status
+ps:
+	docker compose -f ./docker-compose.yml ps
 
 # start docker containers
 start:

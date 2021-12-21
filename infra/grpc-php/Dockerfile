@@ -1,4 +1,4 @@
-FROM php:latest
+FROM php:8.1-fpm
 
 # install packages
 RUN apt-get update \
