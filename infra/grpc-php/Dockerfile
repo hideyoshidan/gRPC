@@ -8,17 +8,33 @@ RUN apt-get update \
     git \
     zip \
     unzip \
-    vim
+    vim \
+    libpq-dev \
+    autoconf \
+    automake \
+    libtool \
+    curl \
+    make \
+    g++ \
+    libprotobuf-dev \
+    libprotoc-dev \
+    protobuf-compiler 
 
 # install need things for php
-RUN apt-get update \
-    && apt-get install -y libpq-dev \
-    && docker-php-ext-install pdo_mysql pdo_pgsql
+RUN docker-php-ext-install pdo_mysql pdo_pgsql
 
 # grpc
 RUN apt-get install libz-dev
 RUN pecl install grpc
 
+# install gRPC PHP Protoc Plugin
+RUN mkdir /plugin
+RUN cd /plugin
+
+RUN git clone -b v1.27.2 https://github.com/grpc/grpc
+RUN cd grpc
+RUN git submodule update --init
+RUN mkdir grpc_php_plugin
 
 # install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
