@@ -31,6 +31,12 @@ restart:
 	docker compose -f ./docker-compose.yml restart
 
 #########################################
+# git modules install for php 
+#########################################
+submodules:
+	./infra/grpc-php/install_submodules.sh
+
+#########################################
 # into containers
 ######################################### 
 # into golang containers
