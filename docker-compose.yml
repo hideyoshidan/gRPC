@@ -23,6 +23,7 @@ services:
       - 9000:9000
     volumes:
       - ./infra/grpc-php/php.ini:/etc/php.ini
+      - ./infra/grpc-php/plugins:/plugins
       - ./php-src:/grpc
       - ./proto:/proto
 
