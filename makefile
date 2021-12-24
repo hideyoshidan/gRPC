@@ -62,3 +62,4 @@ go-run:
 # reload nginx
 nginx-reload:
 	docker exec ${CONTAINER_NGINX} bash -c 'nginx -s reload'
+

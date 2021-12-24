@@ -1,7 +1,7 @@
 syntax = "proto3";
-option go_package = "./";
 
 package sample;
+option go_package = "github.com/hideyoshidan/grpc/server";
 
 // interface
 service Sample {
