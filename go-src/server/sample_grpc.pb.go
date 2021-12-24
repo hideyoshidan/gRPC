@@ -44,7 +44,7 @@ func (c *sampleClient) Sample(ctx context.Context, in *SampleRequest, opts ...gr
 // for forward compatibility
 type SampleServer interface {
 	// rpc function arg is for request, return is response
-	Sample(context.Context, *SampleRequest) (*SampleResponse, error)
+	Sample(con context.Context, in *SampleRequest) (*SampleResponse, error)
 	mustEmbedUnimplementedSampleServer()
 }
 
@@ -52,7 +52,7 @@ type SampleServer interface {
 type UnimplementedSampleServer struct {
 }
 
-func (UnimplementedSampleServer) Sample(context.Context, *SampleRequest) (*SampleResponse, error) {
+func (UnimplementedSampleServer) Sample(con context.Context, in *SampleRequest) (*SampleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Sample not implemented")
 }
 func (UnimplementedSampleServer) mustEmbedUnimplementedSampleServer() {}
